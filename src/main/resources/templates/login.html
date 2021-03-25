@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Trang đăng nhập</h1>
+	<p th:text="${message}" style="color: red"></p>
+	
+	<form th:action="@{/login}" th:method="post" th:object="${account}">
+		<input type="text" name="username" placeholder="Enter username" th:field="*{userName}">
+		<br/>
+		<br/>
+		<input type="password" name="password" placeholder="Enter password" th:field="*{passWord}">
+		<br/>
+		<br/>
+		<input type="submit" value="Login" >	
+	</form>
+	<br/>
+	<br/>
+	<a th:href="@{/register}"><button>Đăng kí</button></a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<p th:text="${message}"></p>
+	<h1>Trang khai báo thuế</h1>
+	<form th:action="" th:method="post" th:object="$user">
+		<input type="text" name="fullname" placeholder="Enter fullname" th:field="*{fullName}"/>
+		<input type="text" name="cmt" placeholder="Enter cmt" th:field="*{cmt}"/>
+		<input type="text" name="fullname" placeholder="Enter fullname" th:field="*{fullName}"/>
+		<input type="text" name="fullname" placeholder="Enter fullname" th:field="*{fullName}"/>
+		<input type="text" name="fullname" placeholder="Enter fullname" th:field="*{fullName}"/>
+		<input type="text" name="fullname" placeholder="Enter fullname" th:field="*{fullName}"/>
+	</form>
+</body>
+</html>
