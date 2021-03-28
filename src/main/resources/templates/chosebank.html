@@ -26,26 +26,26 @@
         <div style="border-radius: 4px; border-width:2px; border-style: solid;border-color: blue; box-sizing: inherit; display: block; width: 50%; margin: auto; margin-top: 4rem;">
 
 
-            <form th:action="@{/login}" th:method="post" th:object="${account}">
+            <form th:action="@{/}" th:method="post">
                 <table style="margin: auto; border-spacing: 1rem;">
-                    <caption>Đăng nhập</caption>
-                    <p th:text="${message}" style="color: red"></p>
+                    <br>
+                    <caption style="font-weight: bold;">Chọn ngân hàng</caption>
                     <tr>
-                        <td>Username</td>
+                        <td>Chọn ngân hàng </td>
                         <td>
-                            <input type="text" name="username" placeholder="Enter username" th:field="*{userName}">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td>
-                            <input type="password" name="password" placeholder="Enter password" th:field="*{passWord}">
+                            <select name="bank" id="">
+                                <option value="0">--Chọn 1 ngân hàng--</option>
+                                <option value="Vietcombank">Vietcombank</option>
+                                <option value="Agribank">Agribank</option>
+                                <option value="Techcombank">Techcombank</option>
+                                <option value="BIDV">BIDV</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <input type="submit" value="Login">
+                            <input type="submit" value="Tiếp tục">
                         </td>
                     </tr>
                 </table>
