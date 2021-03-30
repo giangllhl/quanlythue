@@ -1,6 +1,7 @@
-package com.example.demo.entity;
+	package com.example.demo.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -8,9 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -19,7 +23,7 @@ import lombok.Data;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int user_id;
+	private int id;
 	private String fullName;
 	private String cmt;
 	private String gender;
@@ -31,5 +35,8 @@ public class User {
 	@JoinColumn(name = "account_id")
 	private Account account;
 	
+//	@OneToMany(mappedBy = "bankAccount_id", cascade = CascadeType.ALL, orphanRemoval = true)
+//	@JsonIgnore
+//	private List<BankAccount> bankAccounts; 
 	
 }

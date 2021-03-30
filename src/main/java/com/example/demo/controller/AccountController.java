@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.Arrays;
 import java.util.*;
 
+import org.springframework.aop.scope.ScopedProxyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +32,8 @@ public class AccountController {
 	@PostMapping("/login")
 	public String login(Account acc, Model model) {
 		List<Account> list = accountRepo.findByUserNameAndPassWord(acc.getUserName(), acc.getPassWord());
+		System.out.println(acc);
+		System.out.println(list);
 		if (list.size() != 0) {
 			model.addAttribute("message", "Login success");
 			return "success"; 

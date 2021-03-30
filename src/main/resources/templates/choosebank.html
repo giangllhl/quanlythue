@@ -33,12 +33,11 @@
                     <tr>
                         <td>Chọn ngân hàng </td>
                         <td>
-                            <select name="bank" id="">
-                                <option value="0">--Chọn 1 ngân hàng--</option>
-                                <option value="Vietcombank">Vietcombank</option>
-                                <option value="Agribank">Agribank</option>
-                                <option value="Techcombank">Techcombank</option>
-                                <option value="BIDV">BIDV</option>
+                            <select>
+                                <option value=""> --chọn 1 ngân hàng-- </option>
+                                <option th:each="BankAccount : ${banks}"
+                                   th:value="${BankAccount.id}"
+                                   th:utext="${BankAccount.bank}"/>
                             </select>
                         </td>
                     </tr>
