@@ -15,7 +15,7 @@ import lombok.Data;
 public class Ward {//Xa/phuong
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long ward_id;
+	private Long idward;
 	private String name;
 	private String code;
 	

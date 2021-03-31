@@ -14,8 +14,8 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String userName;
-	private String passWord;
+	private String username;
+	private String password;
 
 //	@Override
 //	public String toString() {

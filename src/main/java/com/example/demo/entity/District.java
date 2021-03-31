@@ -22,7 +22,7 @@ public class District {//huyen/quan
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_district;
+	private Long iddistrict;
 	private String name;
 	private String Code;
 	

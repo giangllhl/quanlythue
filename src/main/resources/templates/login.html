@@ -16,9 +16,9 @@
         <nav style="background-color: aquamarine; width: 100%; height: 2em; float: left; ">
             <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%; margin-left: 5%;  ">Trang chủ</a>
             <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%;  ">Đăng ký</a>
-            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%; ">Khai báo</a>
-            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%;  ">Tính thuế</a>
-            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%;  ">Nộp thuế</a>
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%; pointer-events: none; ">Khai báo</a>
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%; pointer-events: none; ">Tính thuế</a>
+            <a th:href="@{/payment/+{id}}" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%; pointer-events: none; ">Nộp thuế</a>
         </nav>
     </header>
 
@@ -26,20 +26,20 @@
         <div style="border-radius: 4px; border-width:2px; border-style: solid;border-color: blue; box-sizing: inherit; display: block; width: 50%; margin: auto; margin-top: 4rem;">
 
 
-            <form th:action="@{/login}" th:method="post" th:object="${account}">
+            <form th:action="@{/login}" th:method="post">
                 <table style="margin: auto; border-spacing: 1rem;">
                     <caption>Đăng nhập</caption>
                     <p th:text="${message}" style="color: red"></p>
                     <tr>
                         <td>Username</td>
                         <td>
-                            <input type="text" name="username" placeholder="Enter username" th:field="*{userName}">
+                            <input type="text" name="username" placeholder="Enter username">
                         </td>
                     </tr>
                     <tr>
                         <td>Password</td>
                         <td>
-                            <input type="password" name="password" placeholder="Enter password" th:field="*{passWord}">
+                            <input type="password" name="password" placeholder="Enter password">
                         </td>
                     </tr>
                     <tr>

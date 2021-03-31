@@ -18,7 +18,7 @@ public class BankAccount {
 	private Long id;
 	
 	private String bank;
-	private String accountNumber;
+	private String accountnumber;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")

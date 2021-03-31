@@ -18,7 +18,7 @@ import lombok.Data;
 public class Province {//Tinh/thanhpho
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long province_id;
+	private Long idprovince;
 	private String name;
 	private String code;
 	
