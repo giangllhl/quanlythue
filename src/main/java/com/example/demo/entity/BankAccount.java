@@ -1,24 +1,26 @@
 package com.example.demo.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 
-@Data
 @Entity
-public class Account {
+@Data
+public class BankAccount {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	private String username;
-	private String password;
-
-//	@Override
-//	public String toString() {
-//		return "Account [id=" + account_id + ", username= " + userName + ", password= " + passWord + "]";
-//	}
+	
+	private String bank;
+	private String accountnumber;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id")
+	private User user;
 }

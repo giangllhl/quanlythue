@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0;">
+
+<head style="margin: 0;">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điền giấy nộp tiền</title>
+</head>
+
+<body style="margin:0;">
+    <header style="background-color: aqua; margin: 0; padding: 0;">
+        <h1 style="color: red; margin: 0; padding-left: 2%;">Thuế Việt Nam</h1>
+        <h3 style="margin: 0; padding-left: 2%;">Tổng cục thuế-bộ tài chính</h3>
+        <h3 style="margin: 0; padding-left: 2%; padding-bottom: 1em;">Cộng hoà xã hội chủ nghĩa Việt Nam</h3>
+        <nav style="background-color: aquamarine; width: 100%; height: 2em; float: left; ">
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%; margin-left: 5%;  ">Trang chủ</a>
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%;  ">Đăng ký</a>
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%; ">Khai báo</a>
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%;  ">Tính thuế</a>
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%;  ">Nộp thuế</a>
+        </nav>
+    </header>
+
+    <main style="margin-bottom: 2rem;">
+        <div style="border-radius: 4px; border-width:2px; border-style: solid;border-color: blue; box-sizing: inherit; display: block; width: 50%; margin: auto; margin-top: 4rem; margin-bottom: 5rem;">
+
+
+            <form th:action="@{/}" th:method="post">
+                <table style="margin: auto; margin-bottom: 2rem;">
+                    <br>
+                    <caption>
+                        <h2>Giấy nộp tiền</h2>
+                    </caption>
+                    <tr>
+                        <td>
+                            <h3>Thông tin người nộp thuế</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mã số thuế </td>
+                        <td>
+                            {value}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tên người nộp</td>
+                        <td>
+                            {value}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ</td>
+                        <td>{value}</td>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <h3>Thông tin loại tiền</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Loại tiền</td>
+                        <td>
+                            <label>VND
+                                <input type="checkbox" checked="checked">
+                            </label>
+                        </td>
+                        <td>
+                            <label>USD
+                                <input type="checkbox" checked="uncheck">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Thông tin ngân hàng</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Đề nghị ngân hàng</td>
+                        <td>
+                            <select name="bank" id="">
+                                <option value="0">--Chọn 1 ngân hàng--</option>
+                                <option value="Vietcombank">Vietcombank</option>
+                                <option value="Agribank">Agribank</option>
+                                <option value="Techcombank">Techcombank</option>
+                                <option value="BIDV">BIDV</option>
+                            </select>
+                        </td>
+                        <td></td>
+                        <td>Trích số tài khoản</td>
+                        <td>
+                            <select name="bank" id="">
+                                <option value="0">--Chọn 1 ngân hàng--</option>
+                                <option value="1">0123456789</option>
+                                <option value="2">0123456789</option>
+                                <option value="3">0123456789</option>
+                                <option value="4">0123456789</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Thông tin cơ quan quản lý thu</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tỉnh/thành phố</td>
+                        <td>
+                            <select name="city" id="">
+                                <option value="0">Thành phố Hà Nội</option>
+                                <option value="1">0123456789</option>
+                                <option value="2">0123456789</option>
+                                <option value="3">0123456789</option>
+                                <option value="4">0123456789</option>
+                            </select>
+                        </td>
+                        <td></td>
+                        <td>Cơ quan quản lý thu</td>
+                        <td>
+                            <select name="branch" id="">
+                                <option value="0">Chi cục thuế thanh xuân</option>
+                                <option value="1">0123456789</option>
+                                <option value="2">0123456789</option>
+                                <option value="3">0123456789</option>
+                                <option value="4">0123456789</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Thông tin nơi phát sinh khoản thu</h3>
+                        </td>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                    <td colspan="5">
+                        <p>
+                            lưu ý:<br> - Thông tin nơi phát sinh khoản thu hỗ trợ kho bạc nhà nước lấy căn cứ để phân bố thuế về các địa phương.<br> - Hệ thống hỗ trợ mặc định thông tin hỗ trợ khoản thu theo cơ quan thuế quả lý người nộp. Căn cứ vào quy
+                            định của từng địa phương và từng nội dung kinh tế, người nộp chọn thông tin phát sinh khoản thu đến tỉnh/thành phố, quận/huyện, phường/xã tương ứng.
+                        </p>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Tỉnh/Thành phố
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                        <td>
+                            <label>Quận/Huyện
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                        <td colspan="2">
+                            <label>Phường/Xã
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            Tỉnh/Thành phố: {Hà Nội}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quận/Huyện</td>
+                        <td>
+                            <select name="dítric" id="">
+                                <option value="0">Thanh Xuân</option>
+                                <option value="1">0123456789</option>
+                                <option value="2">0123456789</option>
+                                <option value="3">0123456789</option>
+                                <option value="4">0123456789</option>
+                            </select>
+                        </td>
+                        <td>Phường/Xã</td>
+                        <td>
+                            <select name="village" id="">
+                                <option value="0">--lựa chọn--</option>
+                                <option value="1">0123456789</option>
+                                <option value="2">0123456789</option>
+                                <option value="3">0123456789</option>
+                                <option value="4">0123456789</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Thông tin kho bạc</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chuyển cho kho bạc nhà nước</td>
+                        <td>
+                            <select name="treasury" id="">
+                                <option value="0">--lựa chọn--</option>
+                                <option value="1">0123456789</option>
+                                <option value="2">0123456789</option>
+                                <option value="3">0123456789</option>
+                                <option value="4">0123456789</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mở tại NHTM uỷ nghiệm thu</td>
+                        <td>
+                            <select name="treasury" id="">
+                                <option value="0">--lựa chọn--</option>
+                                <option value="1">0123456789</option>
+                                <option value="2">0123456789</option>
+                                <option value="3">0123456789</option>
+                                <option value="4">0123456789</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label>Nộp vào NSNN(Tk: {value})
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                        <td colspan="3">
+                            <label>Thu hồi hoàn(tk: {value}
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Thông tin loại thuế</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Loại thuế</td>
+                        <td colspan="3">
+                            <select name="typeoftax" id="">
+                                <option value="0">Thuế nội địa</option>
+                                <option value="1">0123456789</option>
+                                <option value="2">0123456789</option>
+                                <option value="3">0123456789</option>
+                                <option value="4">0123456789</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Thông tin khác</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">Nộp theo văn bản cơ quan có thẩm quyền</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label>Kiểm toán nhà nước
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                        <td colspan="3">
+                            <label>Thanh tra tài chính
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label>Thanh tra chính phủ
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                        <td colspan="3">
+                            <label>Cơ quan có thẩm quyền khác
+                                <input type="checkbox">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <table border="1">
+                            <caption>Nội dung các khoản nộp ngân sách</caption>
+                            <thead>
+                                <tr>
+                                    <th>Số tờ khai/số quyết định</th>
+                                    <th>kỳ thuế/ngày quyết định</th>
+                                    <th>Nội dung các khoản nộp</th>
+                                    <th>Ghi chú</th>
+                                    <th>số tiền </th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <select name="taxperiod" id="">
+                                        <option value="0">QD/Q2/2021</option>
+                                        <option value="1">0123456789</option>
+                                        <option value="2">0123456789</option>
+                                        <option value="3">0123456789</option>
+                                        <option value="4">0123456789</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="content" id="">
+                                        <option value="0">Thuế thu nhập cá nhân</option>
+                                        <option value="1">0123456789</option>
+                                        <option value="2">0123456789</option>
+                                        <option value="3">0123456789</option>
+                                        <option value="4">0123456789</option>
+                                    </select>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    2000000
+                                </td>
+                            </tr>
+                        </table>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td rowspan="2">
+                            <input type="submit" value="Thiết lập lại">
+                        </td>
+                        <td></td>
+                        <td rowspan="2">
+                            <input type="submit" value="Hoàn thành">
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </main>
+    <footer style="position: relative; left: 0;bottom: 0; text-align: center; width: 100%; margin-top: 2rem;">
+        <hr>
+        <div class="footer" style="margin:0px auto;width: 100%; clear: both; margin-top: 0;">
+            <div class="lenhe_ft" style="text-align:center;">
+                <strong>Thuế Việt Nam - Trang thông tin điện tử của Tổng cục Thuế<br>
+			 Cơ quan chủ quản: Bộ Tài Chính - Số giấy phép: 207/GP-BC ngày 14/05/2004 do Cục Báo chí - Bộ VHTT cấp <br>
+			 Địa chỉ: 123 Lò Đúc - Quận Hai Bà Trưng - Hà Nội <br>
+			 Điện thoại: (024) 37689679 | Fax: (024) 39712286 <br>
+			Ghi rõ nguồn <a class="link_common" href="http://thuedientu.gdt.gov.vn ">http://thuedientu.gdt.gov.vn</a> khi phát hành thông tin từ website này </strong>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
