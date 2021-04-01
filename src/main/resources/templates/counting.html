@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 0;">
+
+<head style="margin: 0;">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang đăng nhập</title>
+</head>
+
+<body style="margin:0;">
+    <header style="background-color: aqua; margin: 0; padding: 0;">
+        <h1 style="color: red; margin: 0; padding-left: 2%;">Thuế Việt Nam</h1>
+        <h3 style="margin: 0; padding-left: 2%;">Tổng cục thuế-bộ tài chính</h3>
+        <h3 style="margin: 0; padding-left: 2%; padding-bottom: 1em;">Cộng hoà xã hội chủ nghĩa Việt Nam</h3>
+        <nav style="background-color: aquamarine; width: 100%; height: 2em; float: left; ">
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%; margin-left: 5%;  ">Trang chủ</a>
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%;  ">Đăng ký</a>
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%; ">Khai báo</a>
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%;  ">Tính thuế</a>
+            <a href="" style="text-decoration: none; font-weight: bold; line-height: 2em; display:inline-block; width: 15%;  ">Nộp thuế</a>
+        </nav>
+    </header>
+
+    <main>
+        <div style="border-radius: 4px; border-width:2px; border-style: solid;border-color: blue; box-sizing: inherit; display: block; width: 50%; margin: auto; margin-top: 4rem;">
+            <form action="">
+                <table style="margin: auto;">
+                    <br>
+                    <caption style="font-weight: bold;">Thông tin truy xuất thuế</caption>
+                    <tr>
+                        <td>Họ tên:</td>
+                        <td><span th:text="${user.fullName}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>CMND:</td>
+                        <td><span th:text="${user.cmt}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Giới tính:</td>
+                        <td><span th:text="${user.gender}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày sinh:</td>
+                        <td><span th:text="${user.dateOfBirth}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Thường trú:</td>
+                        <td><span th:text="${user.homeTown}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Tổng thu nhập:</td>
+                        <td><span th:text="${infotax.totalIncome}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Giảm trừ:</td>
+                        <td><span th:text="${infotax.taxCut}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Tạm nộp:</td>
+                        <td><span th:text="${infotax.temporaryPayment}"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Thuế phải nộp theo tháng:</td>
+                        <td><span th:text="${tax}"></span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Nộp thuế">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </main>
+    <footer style=" position: absolute; left: 0;bottom: 0; text-align: center; width: 100%; ">
+        <hr>
+        <div class="footer " style="margin:0px auto;width: 100%; clear: both; margin-top: 0; ">
+            <div class="lenhe_ft " style="text-align:center; ">
+                <strong>Thuế Việt Nam - Trang thông tin điện tử của Tổng cục Thuế<br>
+			 Cơ quan chủ quản: Bộ Tài Chính - Số giấy phép: 207/GP-BC ngày 14/05/2004 do Cục Báo chí - Bộ VHTT cấp <br>
+			 Địa chỉ: 123 Lò Đúc - Quận Hai Bà Trưng - Hà Nội <br>
+			 Điện thoại: (024) 37689679 | Fax: (024) 39712286 <br>
+			Ghi rõ nguồn <a class="link_common " href="http://thuedientu.gdt.gov.vn ">http://thuedientu.gdt.gov.vn</a> khi phát hành thông tin từ website này </strong>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

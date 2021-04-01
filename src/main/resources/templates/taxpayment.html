@@ -108,25 +108,37 @@
                     <tr>
                         <td>Tỉnh/thành phố</td>
                         <td>
-                            <select name="city" id="">
-                                <option value="0">Thành phố Hà Nội</option>
-                                <option value="1">0123456789</option>
-                                <option value="2">0123456789</option>
-                                <option value="3">0123456789</option>
-                                <option value="4">0123456789</option>
+                            <select id='tp' name='thanhpho' onChange="getcbChild();">
+                                <option value="">--Tỉnh / Thành phố--</option>
                             </select>
                         </td>
                         <td></td>
                         <td>Cơ quan quản lý thu</td>
                         <td>
-                            <select name="branch" id="">
-                                <option value="0">Chi cục thuế thanh xuân</option>
-                                <option value="1">0123456789</option>
-                                <option value="2">0123456789</option>
-                                <option value="3">0123456789</option>
-                                <option value="4">0123456789</option>
+                            <select id="comboChild">
+                                <option value="">--Chi cục thuế--</option>
                             </select>
                         </td>
+                        <script>
+                            getcbChild(); // mỗi lần Form load thì cho nó chạy cái này để khi đảo lộn vị trí của thằng thành phố thì nó vẫn chạy đúng.
+                            function getcbChild() {
+                                var getValue = document.getElementById("tp").value;
+                                if (getValue == "hn") {
+                                    document.getElementById("comboChild").innerHTML = '<select name="quanhuyen">' +
+                                        '<option>quan 7</option>' +
+                                        '<option>quan 8</option>' +
+                                        '</select>';
+                                } else if (getValue == "hcm") {
+                                    document.getElementById("comboChild").innerHTML = '<select name="quanhuyen">' +
+                                        '<option >quan 1</option>' +
+                                        '<option>quan 2</option>' +
+                                        '<option>quan 3</option>' +
+                                        '<option>Dong Da</option>' +
+                                        '<option>Ba Dinh</option>' +
+                                        '<option>Cau Giay</option></select>';
+                                }
+                            }
+                        </script>
                     </tr>
                     <tr>
                         <td>
@@ -168,12 +180,8 @@
                     <tr>
                         <td>Quận/Huyện</td>
                         <td>
-                            <select name="dítric" id="">
-                                <option value="0">Thanh Xuân</option>
-                                <option value="1">0123456789</option>
-                                <option value="2">0123456789</option>
-                                <option value="3">0123456789</option>
-                                <option value="4">0123456789</option>
+                            <select name="calc_shipping_district" required="">
+                                <option value="">--Quận / Huyện--</option>
                             </select>
                         </td>
                         <td>Phường/Xã</td>
@@ -350,6 +358,11 @@
             </div>
         </div>
     </footer>
+    <!-- <select id='tp' name ='thanhpho' onChange="getcbChild();">
+        <option value="hcm" >Ho Chi Minh</option>
+        <option value ='hn' >Ha Noi</option></select>
+        <div id="comboChild"></div> -->
+
 </body>
 
 </html>

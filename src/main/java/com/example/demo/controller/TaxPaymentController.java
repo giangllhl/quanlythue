@@ -28,7 +28,7 @@ public class TaxPaymentController {
 	@GetMapping("/{id}")
 	public String chooseBank (@PathVariable("id") Integer id , Model model) {
 		Optional<User> u = userRepo.findById(id);
-		System.out.println("dcm user day"+u);
+//		System.out.println("dcm user day"+u);
 		List<BankAccount> listbanks =  bankAccountRepo.findByUserId(id);
 //		bankAccountRepo.findByUserId(id_user)
 		System.out.println(listbanks);
